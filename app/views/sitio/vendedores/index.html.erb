@@ -1,0 +1,77 @@
+
+
+<div class="container">
+        <div id="primary" class="content-area">
+                <main id="main" class="site-main">
+
+                    <section class="section-product-cards-carousel">
+                        <header>
+                            <h2 class="h1">Vendedores</h2>
+                         
+                        </header>
+
+                        
+                    </section>
+
+                   
+                    
+                    <div class="tab-content">
+
+                        <div role="tabpanel" class="tab-pane active" id="grid" aria-expanded="true">
+
+                            <ul class="products columns-4">
+                                <% @vendedores.each do |vendedor| %>
+                                <style>
+                                        .vendedor ul li {
+                                            
+                                            color:#333e48;
+                                            
+                                            list-style: none;
+                                            text-align:left;
+                                        }
+                                </style>
+                                
+                                <li class="product ">
+                                    <div class="product-outer" style="">
+                                        <div class="product-inner">
+                                            <a href="#" style="text-align:center">
+                                                <h2 style="font-size:18px; color:#333e48; font-weight: bold;";  ><%= vendedor.nombre %></h2>
+                                                <h6 style="color:#333e48;"><%= vendedor.email %></p></h6>
+                                                <div class="product-thumbnail">
+                                                        <%= image_tag vendedor.image.url(:medium) %>
+                                                    
+                                                </div>
+                                               
+                                            </a>
+
+                                            <div class="vendedor">
+                                                    <ul>
+                                                      
+                                                        <li><i class="fab fa-whatsapp"></i> <%= vendedor.whatsapp %> </li>
+                                                        <li><i class="fas fa-phone"></i> <%= vendedor.telefone %> </li>
+                                                        
+                                                    </ul>
+                                                     
+                                                </div>
+                                            
+                                                
+                                                
+                                           
+
+                                            
+                                        </div>
+                                        <!-- /.product-inner -->
+                                    </div><!-- /.product-outer -->
+                                </li>
+                                <% end %>
+                                
+                                
+                            </ul>
+                        </div>
+                     
+                    </div>
+                  
+
+                </main><!-- #main -->
+            </div>
+</div>

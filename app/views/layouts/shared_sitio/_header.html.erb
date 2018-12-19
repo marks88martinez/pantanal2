@@ -1,0 +1,73 @@
+<header id="masthead" class="site-header header-v2">
+        <div class="container">
+            <div class="row">
+                    <style>
+                          /*  .log{
+                                top: -35px;
+                              
+                            }
+                            .log img{
+                                
+                                
+                                position: absolute;
+                            }
+                           .navbar-primary {
+                            
+                            top: -60px;
+                            }*/
+                           
+                        </style>
+                <!-- ============================================================= Header Logo ============================================================= -->
+                <div class="header-logo ">
+
+                    <%= link_to  sitio_home_index_path, class:"header-logo-link" do %>
+                        <img src="/template_sitio/assets/images/logo.png" alt="">
+                    <% end %>
+                  
+                </div>
+                <!-- ============================================================= Header Logo : End============================================================= -->
+
+                <div class="primary-nav animate-dropdown">
+                    <div class="clearfix">
+                         <button class="navbar-toggler hidden-sm-up pull-right flip" type="button" data-toggle="collapse" data-target="#default-header">
+                                &#9776;
+                         </button>
+                    </div>
+
+                    <div class="collapse navbar-toggleable-xs" id="default-header">
+                            <nav>
+                                <ul id="menu-main-menu" class="nav nav-inline yamm">
+                                    
+                                    <li class="menu-item animate-dropdown">
+                                            <%= link_to  "Home", sitio_home_index_path%> 	
+                                    </li>
+                                    <li class="menu-item animate-dropdown">
+                                            <%= link_to  "Empresa", sitio_empresa_index_path%> 	
+                                    </li>
+                                 
+                                    <li class="menu-item animate-dropdown">
+                                            <%= link_to  "Vendedores", sitio_vendedores_path%> 	
+                                    </li>
+                                    <li class="menu-item animate-dropdown">
+                                            <%= link_to  "Contacto", sitio_contacto_index_path%> 	
+                                    </li>
+
+                                    
+                                </ul>
+                            </nav>
+                        </div>
+                </div>
+
+                <div class="header-support-info">
+                    <div class="media">
+                        <span class="media-left support-icon media-middle"><i class="ec ec-support"></i></span>
+                        <div class="media-body">
+                            <span class="support-number"><strong>Telefone:</strong> (061) 514242</span><br/>
+                            <span class="support-email">vendas@pantapesca.com</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.row -->
+        </div>
+    </header><!-- #masthead -->

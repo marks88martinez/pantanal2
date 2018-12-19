@@ -1,0 +1,19 @@
+<nav class="woocommerce-breadcrumb">
+    
+    <!-- <%= request.path %> -->
+        <a href="/">Home</a>
+    
+    <% #if request.path == "/sitio/productos/#{request.path.match(/(\d+)\z/)[1]}" or   %>
+    <% if (request.path.match('/sitio/productos/')) || (request.path.match('/sitio/detalle_productos/' )) || ( request.path.match('search'))%>
+       <span class="delimiter"><i class="fa fa-angle-right"></i></span>
+            <a href='/sitio/search?utf8=✓&q='>Produtos</a>
+    
+       <% end %>
+      
+        <% unless request.path.split('/').last  == '%20%%3E' || request.path.match('search') || request.path.match(' ')%>
+        <span class="delimiter"><i class="fa fa-angle-right"></i></span><%= @pro2.nombre %>
+        <% end %>
+        <!-- request.path.split('/').last -->
+       
+
+    </nav>

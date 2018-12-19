@@ -1,0 +1,148 @@
+<% if @producto.errors.any? %>
+    <section  id="alert" style="padding: 10px">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-danger alert-dismissible">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                          <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                          <ul>
+                            <% @producto.errors.full_messages.each do |messages| %>
+                            <li><%= messages%></li>
+                            <% end %>
+                          </ul>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+<% end %>
+
+
+<div class="row">
+        <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">producto</h3>
+                  </div>
+                  <!-- /.box-header -->
+                  <!-- form start -->
+                 
+                    <%= form_for([:sistema, @producto], html: { multipart: true }) do |f| %>
+                    <div class="box-body">
+                    <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <%= f.label :nombre %> 
+                              <%= f.text_field :nombre, class: "form-control", placeholder:"nombre",:required => true %>
+                         </div>
+                         <div class="form-group">
+                            <%= f.label :codigo %> 
+                            <%= f.text_field :code, class: "form-control", placeholder:"codigo",:required => true %>
+                       </div>
+                         <div class="form-group">
+                              <%= f.label :descripcion %> 
+                              
+                              <%= f.text_area :descripcion, class: "form-control", rows:10, data: { provide:'markdown'}%><br>
+
+                         </div>
+                            <div class="row">
+                                <div class="form-group">
+                                  <div class="col-md-6">
+                                      <%= f.label :precio %> 
+                                      <%= f.text_field :precio, class: "form-control" %>
+                                    </div>
+                                
+                                    
+                                    <div class="col-md-6">
+                                      <%= f.label :precio_oferta %> 
+                                      <%= f.text_field :precio_oferta, class: "form-control" %>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                            
+                        
+                        
+
+                        
+                      </div>
+                      <div class="col-md-6">
+                     
+                         <div class="form-group">
+                              <%= f.label :destacado %> 
+                              <%=  f.check_box :destacado  %> 
+                         </div>
+                         <div class="form-group">
+                              <%= f.label :disponible %> 
+                              <%=  f.check_box :disponible  %> 
+                         </div>
+  
+
+                         <div class="form-group">
+                            <%= f.label :categoria %>
+                            <%= f.collection_select :cat_id, @cat || [] ,:id, :nombre, {include_blank: true}, {id: 'categorias', class:'form-control', :required => true}%>
+                          </div>
+                
+                          <div class="form-group">
+                            <%= f.label :Subcategoria %>
+                            <%= f.grouped_collection_select "subcat", @cat || [],:cats, :nombre , :id, :nombre, {include_blank: true} , {id: 'subcategorias',class:'form-control'} %>
+                          </div>
+
+                          <div class="form-group">
+                              <%= f.label :marca_id %>
+                              <%= f.collection_select :marca_id, @marca || [],:id, :nombre, {include_blank: true}, {id: 'marca', class:'form-control'}%>
+                          </div>
+
+
+                          <div class="form-group">
+                              <div id="producto_imagens">
+                                
+                                <%= f.fields_for :producto_imagens do |producto_imagen_fields| %>
+                                <%= render partial: "producto_imagen_fields", locals:{ f: producto_imagen_fields }%>
+                  
+                                <%end%>
+                                <br>
+                                    <%=link_to_add_association('[+ Add Imagen]',f, :producto_imagens,class: "btn btn-info",  remote: true)%>
+                  
+                  
+                              </div>
+                            </div>
+                  
+
+                      </div>
+                      
+                    </div>
+                   
+           
+                     
+                     
+                    </div>
+                    <div class="box-body">
+                      
+                     
+                    </div>
+                    <!-- /.box-body -->
+      
+                    <div class="box-footer">
+                      <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+
+                   
+                  
+                  <% end %>
+                </div>
+                <!-- /.box -->
+
+               
+      
+      
+              
+      
+        
+               
+               
+             
+</div>

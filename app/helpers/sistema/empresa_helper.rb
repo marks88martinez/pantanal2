@@ -1,0 +1,2 @@
+module Sistema::EmpresaHelper
+end

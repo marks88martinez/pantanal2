@@ -1,0 +1,42 @@
+
+
+                            <!-- /////////////////////////////// -->
+
+
+                            <section class="home-list-categories animate-in-view fadeIn animated" data-animation="fadeIn">
+                                <header>
+                                    <h2 class="h1">PRODUCTOS</h2>
+                                </header>
+                                <ul class="categories">
+                                        <% @ultimos_prod.each do |ultimo| %>
+                                        <li class="category">
+                                                <%= link_to  sitio_detalle_producto_path(ultimo), class:"media-left" do %>
+                                        <div class="media">
+
+                                               
+
+                                            <div class="media-left" >
+                                                    <% ultimo.producto_imagens.first(1).each do |prod| %>
+                                                    <%= image_tag prod.image.url(:medium) %>
+                                                    <% end %>
+                                            </div><!-- /.media-left -->
+
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><%= ultimo.categoria_admin %></h4>
+                                                <ul class="sub-categories list-unstyled">
+                                                    <li class="cat-item">
+                                                        <a href="product-category.html"><span class="no-child"></span><%= ultimo.nombre %></a>
+                                                    </li>
+                                                  
+                                                </ul>
+                                            </div><!-- /.media-body -->
+                                        </div><!-- /.media -->
+                                        <!-- <a class="see-all" href="#">See all</a> -->
+                                        <% end %>
+                                    </li>
+                                    <% end %>
+                                    
+                                </ul>
+                            </section>
+
+                        

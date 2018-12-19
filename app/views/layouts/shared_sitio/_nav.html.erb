@@ -1,0 +1,93 @@
+<br>
+<nav class="navbar navbar-primary navbar-full">
+        <div class="container">
+            <ul class="nav navbar-nav departments-menu animate-dropdown">
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="departments-menu-toggle" aria-expanded="false">CATEGORIAS</a>
+                    <ul id="menu-vertical-menu" class="dropdown-menu yamm departments-menu-dropdown" style="">
+                       
+                        <% @categoria.each do |cat| %>
+                        <li class="menu-item menu-item-has-children animate-dropdown dropdown">
+                                <%=link_to  sitio_producto_path(cat), "aria-haspopup"=>"true" do %>
+                                <%= cat.nombre%> 
+                                    <% if !cat.subcategoria(cat.id).blank? %>
+                                    <i class="fas fa-chevron-right pull-right"></i>
+                                    <% end %>
+                                <% end %>
+                            <!-- <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true"><%= cat.nombre %></a> -->
+                            <% cat.subcategoria(cat.id).each do |sub| %>
+                                <% if !sub.blank? %>
+                                <ul role="menu" class=" dropdown-menu">
+                                        <% cat.subcategoria(cat.id).each do |sub| %>
+                                        <li class="menu-item animate-dropdown">
+                                            <%=link_to  sitio_producto_path(sub) do %>
+                                            <%= sub.nombre%>
+                                            <% end %>
+                                           
+                                        </li>
+                                        <% end %>
+                                </ul>
+                                <% end %>
+                             <% end %>
+                        </li>
+                        <% end %>
+
+               
+                        
+                    </ul>
+                </li>
+            </ul>
+            <%=form_tag sitio_search_path, url: sitio_search_path , method: :get, class: "navbar-search" do%>
+            
+            
+           
+                <label class="sr-only screen-reader-text" for="search">Search for:</label>
+                <div class="input-group">
+                    <%= text_field_tag(:q, params[:q],{class:"form-control search-field", placeholder: "Digite aqui o produto que você procura"}) %>
+
+                    <!-- <div class="input-group-addon search-categories"> -->
+                        <!-- <select name="product_cat" id="product_cat" class="postform resizeselect" style="width: 137px;">
+                            <option value="0" selected="selected">All Categories</option>
+                            <option class="level-0" value="laptops-laptops-computers">Laptops</option>
+                            <option class="level-0" value="ultrabooks-laptops-computers">Ultrabooks</option>
+                            <option class="level-0" value="mac-computers-laptops">Mac Computers</option>
+                            <option class="level-0" value="all-in-one-laptops-computers">All in One</option>
+                            <option class="level-0" value="servers">Servers</option>
+                            <option class="level-0" value="peripherals">Peripherals</option>
+                            <option class="level-0" value="gaming-laptops-computers">Gaming</option>
+                            <option class="level-0" value="accessories-laptops-computers">Accessories</option>
+                            <option class="level-0" value="audio-speakers">Audio Speakers</option>
+                            <option class="level-0" value="headphones">Headphones</option>
+                            <option class="level-0" value="computer-cases">Computer Cases</option>
+                            <option class="level-0" value="printers">Printers</option>
+                            <option class="level-0" value="cameras">Cameras</option>
+                            <option class="level-0" value="smartphones">Smartphones</option>
+                            <option class="level-0" value="game-consoles">Game Consoles</option>
+                            <option class="level-0" value="power-banks">Power Banks</option>
+                            <option class="level-0" value="smartwatches">Smartwatches</option>
+                            <option class="level-0" value="chargers">Chargers</option>
+                            <option class="level-0" value="cases">Cases</option>
+                            <option class="level-0" value="headphone-accessories">Headphone Accessories</option>
+                            <option class="level-0" value="headphone-cases">Headphone Cases</option>
+                            <option class="level-0" value="tablets">Tablets</option>
+                            <option class="level-0" value="tvs">TVs</option>
+                            <option class="level-0" value="wearables">Wearables</option>
+                            <option class="level-0" value="pendrives">Pendrives</option>
+                        </select> -->
+                    <!-- </div> -->
+                    <div class="input-group-btn">
+                           
+                        <button type="submit" class="btn btn-secondary"><i class="ec ec-search"></i></button>
+                    </div>
+                </div>
+            
+            <% end %>
+
+         
+            
+        </div>
+    </nav>
+
+
+

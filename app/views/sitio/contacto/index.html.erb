@@ -1,0 +1,97 @@
+<!-- <h1>contacto</h1> -->
+
+
+
+<div >
+        <div class="container">
+
+              
+
+               
+
+                
+
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main">
+                    <article class="post-2508 page type-page status-publish hentry" id="post-2508">
+                        <div itemprop="mainContentOfPage" class="entry-content">
+                            <div class="map" style="width: 100vw; position: relative; margin-left: -50vw; left: 50%; margin-bottom: 3em;">
+                                <!-- <iframe height="514" allowfullscreen="" style="border: 0px none; pointer-events: none;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.593303940039!2d-0.15470444843858283!3d51.53901886611164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ae62edd5771%3A0x27f2d823e2be0249!2sPrincess+Rd%2C+London+NW1+8JR%2C+UK!5e0!3m2!1sen!2s!4v1458827996435"></iframe> -->
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.9029345413574!2d-54.610148985687545!3d-25.508283542234683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f69aaae12eb245%3A0x6ea3dff17828673c!2sPantanal+Pesca+-+Tudo+para+sua+pescaria!5e0!3m2!1ses-419!2spy!4v1538068849922" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                            <div class="vc_row-full-width vc_clearfix"></div>
+                            <div class="vc_row wpb_row vc_row-fluid">
+                                <div class="contact-form wpb_column vc_column_container vc_col-sm-12 col-sm-12">
+                                    <div class="vc_column-inner ">
+                                        <div class="wpb_wrapper">
+                                                <% if notice %>
+                                                <div class="alert alert-success alert-dismissible" role="alert">
+                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <strong>!</strong> <%= notice %>
+                                                </div>
+                                                <% end %>
+
+                                            <div class="wpb_text_column wpb_content_element ">
+                                                <div class="wpb_wrapper">
+                                                    <h2 class="contact-page-title">Deixe-nos uma mensagem</h2>
+                                                    <!-- <p>Maecenas dolor elit, semper a sem sed, pulvinar molestie lacus. Aliquam dignissim, elit non mattis ultrices,<br>neque odio ultricies tellus, eu porttitor nisl ipsum eu massa.</p> -->
+                                                </div>
+                                            </div>
+                                            <div lang="en-US" dir="ltr" id="wpcf7-f2507-p2508-o1" class="wpcf7" role="form">
+                                                <div class="screen-reader-response"></div>
+                                                
+
+                                                <%= form_for(sitio_contacto_index_path) do |f| %>
+                                                    <div class="form-group row">
+                                                        <div class="col-xs-12 col-md-6">
+                                                            <%= f.label :nome %><br>
+                                                            <!-- <label>Nome*</label><br> -->
+                                                            <span class="wpcf7-form-control-wrap first-name">
+                                                                
+                                                                
+                                                                <%= f.text_field :nome, class:"wpcf7-form-control wpcf7-text wpcf7-validates-as-required input-text", placeholder:"Nome", :required => true %>
+                                                                
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-xs-12 col-md-6">
+                                                            <%= f.label :email %><br> 
+                                                            <span class="wpcf7-form-control-wrap first-name">
+                                                                <%= f.text_field :email, class:"wpcf7-form-control wpcf7-text wpcf7-validates-as-required input-text", placeholder:"Email", :required => true %>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                            <%= f.label :assunto %><br> 
+                                                            
+                                                            <span class="wpcf7-form-control-wrap subject">
+                                                             <%= f.text_field :assunto, class:"wpcf7-form-control wpcf7-text input-text", placeholder:"Assunto", :required => true %>
+                                                            <!-- <input type="text" aria-invalid="false" class="wpcf7-form-control wpcf7-text input-text" size="40" value="" name="subject"> -->
+                                                        </span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        
+                                                        <%= f.label :mensagem %><br> 
+                                                        <span class="wpcf7-form-control-wrap your-message">
+                                                            <%= f.text_area :mensagem, class:"wpcf7-form-control wpcf7-textarea", rows:"10", cols:"40", :required => true %>
+                                                            <!-- <textarea aria-invalid="false" class="wpcf7-form-control wpcf7-textarea" rows="10" cols="40" name="your-message"></textarea> -->
+                                                        </span>
+                                                    </div>
+                                                    <div class="form-group clearfix">
+
+                                                        <p><input type="submit" value="Enviar"></p>
+
+                                                    </div>
+                                                <% end %>    
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </article>
+                </main><!-- #main -->
+            </div><!-- #primary -->
+        </div><!-- .container -->
+    </div>

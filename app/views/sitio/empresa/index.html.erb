@@ -1,0 +1,21 @@
+
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main">
+                    <article class="has-post-thumbnail hentry">
+                        <% @empresa.each do |empresa| %>
+                        
+                        
+                        <header class="entry-header header-with-cover-image" style="">
+                                <%= image_tag empresa.image.url(:medium) %>
+                            <div class="caption">
+                                <h1 class="entry-title" itemprop="name"><%= empresa.titulo %></h1>
+                                <p class="entry-subtitle"> <%= empresa.descripcion %></p>
+                            </div>
+                        </header><!-- .entry-header -->
+                        <% end %>
+                        <br><br><br>
+
+                    </article><!-- #post-## -->
+                </main><!-- #main -->
+            </div><!-- #primary -->
+  

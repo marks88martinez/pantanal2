@@ -1,0 +1,477 @@
+<div class="preload"></div>
+        <div id="page" class="hfeed site">
+            <a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+          <%= render  "layouts/shared_sitio/top-bar" %>
+          
+          <%= render  "layouts/shared_sitio/header" %>
+          <%= render  "layouts/shared_sitio/nav" %>
+
+         
+
+          
+
+            <div id="content" class="site-content" tabindex="-1">
+                <div class="container">
+                    <%= render  "layouts/shared_sitio/breadcrumb" %>
+
+                    <!-- /.woocommerce-breadcrumb -->
+                   
+                    <div id="" class="content-area">
+                        <main id="main" class="site-main">
+
+                            <div class="product">
+
+                                <div class="single-product-wrapper">
+                                    <div class="product-images-wrapper">
+                                        <!-- <span class="onsale">Sale!</span> -->
+                                        <div class="images electro-gallery">
+                                            <div class="thumbnails-single owl-carousel ">
+                                                <!-- <a href="images/single-product/s1-1.jpg" class="zoom" title="" data-rel="prettyPhoto[product-gallery]"><img src="/template_sitio/assets/images/blank.gif" data-echo="/template_sitio/assets/images/single-product/s1-1.jpg" class="wp-post-image" alt=""></a> -->
+
+                                                <!-- <a href="images/single-product/s2.jpg" class="zoom" title="" data-rel="prettyPhoto[product-gallery]"><img src="/template_sitio/assets/images/blank.gif" data-echo="/template_sitio/assets/images/single-product/s2.jpg" class="wp-post-image" alt=""></a> -->
+                                                
+                                                <% @detalle_producto2.producto_imagens.each do |prod| %>
+                                                <!-- <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="example-1"><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg" alt="image-1" /></a> -->
+                                                <a href="<%=  prod.image.url(:medium) %>" class="" title=""  ><img src="<%=  prod.image.url(:medium) %>" data-echo="<%=  prod.image.url(:medium) %>" class="wp-post-image" data-lity  alt=""></a>
+                                                
+
+                                                
+                                                <% end %>
+                                                
+
+                                                
+                                                
+                                                
+                                                
+                                            </div><!-- .thumbnails-single -->
+                                            
+                                            <div class="thumbnails-all columns-5 owl-carousel">
+                                                <!-- <a href="images/single-product/single-thumb1.jpg" class="first" title=""><img src="/template_sitio/assets/images/blank.gif" data-echo="/template_sitio/assets/images/single-product/single-thumb1.jpg" class="wp-post-image" alt=""></a> -->
+                                                
+                                                
+                                                <% @detalle_producto2.producto_imagens.each do |prod| %>
+                                                    
+                                                
+                                                  <a href="<%=  prod.image.url(:medium) %>" class=" " title=""><img src=" <%=  prod.image.url(:medium) %>" data-echo=" <%=  prod.image.url(:medium) %>" class="wp-post-image" alt=""></a>
+                                                <% end %>
+                                                
+                                                
+
+                                               
+
+                                                <!-- <a href="images/single-product/single-thumb6.jpg" class="first" title=""><img src="/template_sitio/assets/images/blank.gif" data-echo="/template_sitio/assets/images/single-product/single-thumb6.jpg" class="wp-post-image" alt=""></a> -->
+                                            </div><!-- .thumbnails-all -->
+                                        </div><!-- .electro-gallery -->
+                                    </div><!-- /.product-images-wrapper -->
+
+                                    
+                                    <div class="summary entry-summary">
+
+                                        <span class="loop-product-categories">
+                                            <a href="/" rel="tag">Categoria</a>
+                                        </span><!-- /.loop-product-categories -->
+                                            
+                                            <h1 itemprop="name" class="product_title entry-title"><%= @detalle_producto2.nombre %></h1>
+                                            <span>codigo: <%= @detalle_producto2.code %></span>
+                                          
+                                            <div class="availability in-stock">Disponível: 
+                                                <% if @detalle_producto2.disponible == 1 %>
+                                                  
+                                                <span>Em estoque</span>
+                                                <% else %>
+                                                <span style="color:firebrick">Em falta</span>
+                                                <% end %>
+                                            </div>
+
+                                        <!-- <div class="woocommerce-product-rating">
+                                            <div class="star-rating" title="Rated 4.33 out of 5">
+                                                <span style="width:86.6%"><strong itemprop="ratingValue" class="rating">4.33</strong> out of <span itemprop="bestRating">5</span> based on<span itemprop="ratingCount" class="rating">3</span> customer ratings</span>
+                                            </div>
+
+                                            <a href="#reviews" class="woocommerce-review-link">(<span itemprop="reviewCount" class="count">3</span> customer reviews)</a>
+                                        </div> -->
+                                        <!-- .woocommerce-product-rating -->
+
+                                        <div class="brand">
+                                            <!-- <a href="product-category.html">
+                                                <img src="/template_sitio/assets/images/single-product/brand.png" alt="Gionee" />
+                                            </a> -->
+                                        </div><!-- .brand -->
+
+                                        <!-- <div class="availability in-stock">Availablity: <span>In stock</span></div>.availability -->
+
+                                        <hr class="single-product-title-divider" />
+
+                                        <div class="action-buttons">
+
+                                            <!-- <a href="#" class="add_to_wishlist" >Wishlist</a>
+
+                                            <a href="#" class="add-to-compare-link" data-product_id="2452">Compare</a> -->
+                                        </div><!-- .action-buttons -->
+
+                                        <div itemprop="description">
+                                                <%= markdown(@detalle_producto2.descripcion) %>
+                                            <!-- <ul>
+                                                <li>4.5 inch HD Touch Screen (1280 x 720)</li>
+                                                <li>Android 4.4 KitKat OS</li>
+                                                <li>1.4 GHz Quad Core™ Processor</li>
+                                                <li>20 MP front and 28 megapixel CMOS rear camera</li>
+                                            </ul> -->
+
+                                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p> -->
+                                            <!-- <p><strong>SKU</strong>: FW511948218</p> -->
+                                        </div><!-- .description -->
+
+                                        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+                                            <p class="price">
+                                                <span class="electro-price">
+
+                                                    <!-- //////////////// -->
+
+                                                    <% if @detalle_producto2.precio.blank? %>
+                                                    <span class="amount"> </span>
+                                                 
+                                                    <% elsif !@detalle_producto2.precio.blank? && @detalle_producto2.precio_oferta.blank? %>
+                                                    <ins><span class="amount"> $ <%= @detalle_producto2.precio %></span></ins>
+                                                    <% elsif !@detalle_producto2.precio_oferta.blank? %>
+                                                    <ins><span class="amount"> $ <%= @detalle_producto2.precio_oferta %></span></ins>
+                                                    <% end %>
+
+                                                    <% if @detalle_producto2.precio_oferta.blank? %>
+                                                    <span class="amount"> </span>
+                                                    <% else %>
+
+                                                
+                                                    <del><span class="amount"> Antes $ <%= @detalle_producto2.precio %></span></del>
+                                                    <% end %>
+                                                    
+                                                    <!-- //////////////// -->
+
+                                                </span>
+                                            </p>
+
+                                            <!-- <meta itemprop="price" content="1215" />
+                                            <meta itemprop="priceCurrency" content="USD" />
+                                            <link itemprop="availability" href="http://schema.org/InStock" /> -->
+                                        </div><!-- /itemprop -->
+                                        <div style="width: 150px;">
+
+                                            <% unless @detalle_producto2.marca == nil %>
+                                                <%= link_to   sitio_path(@detalle_producto2.marca) do %>
+                                                    <%= image_tag @detalle_producto2.marca.image.url(:medium) %>
+                                                <% end %>  
+                                            <% end %>
+                                        </div>
+
+
+
+
+                                        
+                                        
+                                        
+                                        
+                                    </div><!-- .summary -->
+                                    
+                                    
+                                </div><!-- /.single-product-wrapper -->
+                                
+                                
+                                
+                                
+                                
+                            </div>
+                            <!-- /////////////////////// -->
+                          
+                            <% unless @subproducto.blank?%>
+                            
+                              
+                          
+                            
+                        
+                            <div id="" class="content-area">
+                                    <main id="main" class="site-main">
+            
+                                       
+                                        <header class="page-header">
+                                            <h1 class="page-title">Productos Relacionados</h1>
+                                        </header>
+            
+                                        <style>
+                                            .subimagen img{
+                                                width: 100px;
+                                                text-align: middle; 
+                                                margin: 0 auto;
+                                                padding: 0;
+                                            }
+
+                                            .table td {
+                                                text-align: center;  
+                                                vertical-align: middle;
+                                                 
+                                             }
+                                            .table th {
+                                                text-align: center;
+                                                vertical-align: middle;   
+                                             }
+                                           
+                                        </style>
+            
+                                        <div class="tab-content">
+                                            
+                                            <div role="tabpanel" class="tab-pane active" id="list-view-small" aria-expanded="true">
+            
+                                                    <table class="table table-hover">
+                                                        <thead class="shop-control-bar">
+                                                                <tr>
+                                                                    
+                                                                    <th >Imagen </th>
+                                                                    <% if !@subproducto.any? { |i| i.color.blank?} %>
+                                                                        <th>Color </th>
+                                                                    <% end %>
+                                                                    <% if !@subproducto.any? { |i| i.modelo.blank?} %>
+                                                                        <th>Modelo</th>
+                                                                    <% end %>  
+                                                                    <% if !@subproducto.any? { |i| i.tamanho.blank?} %>
+                                                                        <th>Tamanho</th>
+                                                                    <% end %>  
+                                                                    <% if !@subproducto.any? { |i| i.peso.blank?} %>
+                                                                        <th>Peso</th>
+                                                                    <% end %>  
+                                                                    <% if !@subproducto.any? { |i| i.cantidad.blank?} %>
+                                                                        <th>Cantidad</th>
+                                                                    <% end %>  
+                                                                    <% if !@subproducto.any? { |i| i.acabamento.blank?} %>
+                                                                        <th>Acabamento</th>
+                                                                    <% end %>  
+                                                                    <% if !@subproducto.any? { |i| i.recolhimento.blank?} %>
+                                                                        <th>Recolhimento</th>
+                                                                    <% end %>  
+                                                                    <% if !@subproducto.any? { |i| i.rolamento.blank?} %>
+                                                                        <th>Rolamento</th>
+                                                                    <% end %>  
+                                                                    <% if !@subproducto.any? { |i| i.freio.blank?} %>
+                                                                        <th>Freio/Drag</th>
+                                                                    <% end %>  
+                                                                    <% if !@subproducto.any? { |i| i.caplinhna.blank?} %>
+                                                                        <th>Cap. Linha</th>
+                                                                    <% end %>  
+                                                                    <% if !@subproducto.any? { |i| i.potencia.blank?} %>
+                                                                        <th>Pôtencia</th>
+                                                                    <% end %>  
+                                                                    <% if !@subproducto.any? { |i| i.tension.blank?} %>
+                                                                        <th>Tensão</th>
+                                                                    <% end %>  
+                                                                    <% if !@subproducto.any? { |i| i.acao.blank?} %>
+                                                                        <th>Ação</th>
+                                                                    <% end %>  
+                                                                    <% if !@subproducto.any? { |i| i.peso_de_arremesso.blank?} %>
+                                                                        <th>Peso de arremesso</th>
+                                                                    <% end %>  
+                                                                    <% if !@subproducto.any? { |i| i.resistencia.blank?} %>
+                                                                        <th>Resistência</th>
+                                                                    <% end %>  
+                                                                    <% if !@subproducto.any? { |i| i.diametro.blank?} %>
+                                                                        <th>Diâmetro</th>
+                                                                    <% end %>  
+
+                                                                       
+                                                                       
+                                                                        <th>Precio</th>
+                                                                       
+                                                                       
+                                                                      </tr>
+                                                        </thead>
+                                                      
+                                                            <tbody>
+                                                                
+                                                                <% @subproducto.each do |subprod| %>
+                                                                <tr>
+                                                            
+                                                                  <td >
+                                                                     
+                                                                            <a href="<%=  subprod.image.url %>" class=" subimagen" title=""  ><img src="<%=  subprod.image.url(:medium) %>" data-echo="<%=  subprod.image.url %>" class="wp-post-image" data-lity  alt=""></a>
+
+                                                                    </td>
+                                                                  
+                                                                  
+                                                              
+                                                              
+                                                                 <% if  !subprod.color.blank? %>
+                                                                    <td class="align-middle"><%= subprod.color %></td>
+                                                                 <% end %>
+                                                                 <% if  !subprod.modelo.blank? %>
+                                                                    <td class="align-middle"><%= subprod.modelo %></td>
+                                                                 <% end %>
+                                                                 <% if  !subprod.tamanho.blank? %>
+                                                                    <td class="align-middle"><%= subprod.tamanho %></td>
+                                                                 <% end %>
+                                                                 <% if  !subprod.peso.blank? %>
+                                                                    <td><%= subprod.peso %></td>
+                                                                 <% end %>
+                                                                 <% if  !subprod.cantidad.blank? %>
+                                                                    <td><%= subprod.cantidad %></td>
+                                                                 <% end %>
+                                                                 <% if  !subprod.acabamento.blank? %>
+                                                                    <td><%= subprod.acabamento %></td>
+                                                                 <% end %>
+                                                                 <% if  !subprod.recolhimento.blank? %>
+                                                                    <td><%= subprod.recolhimento %></td>
+                                                                 <% end %>
+                                                                 <% if  !subprod.rolamento.blank? %>
+                                                                    <td><%= subprod.rolamento %></td>
+                                                                 <% end %>
+                                                                 <% if  !subprod.freio.blank? %>
+                                                                    <td><%= subprod.freio %></td>
+                                                                 <% end %>
+                                                                 <% if  !subprod.caplinhna.blank? %>
+                                                                    <td><%= subprod.caplinhna %></td>
+                                                                 <% end %>
+                                                                 <% if  !subprod.potencia.blank? %>
+                                                                    <td><%= subprod.potencia %></td>
+                                                                 <% end %>
+                                                                 <% if  !subprod.tension.blank? %>
+                                                                    <td><%= subprod.tension %></td>
+                                                                 <% end %>
+                                                                 <% if  !subprod.acao.blank? %>
+                                                                    <td><%= subprod.acao %></td>
+                                                                 <% end %>
+                                                                 <% if  !subprod.peso_de_arremesso.blank? %>
+                                                                    <td><%= subprod.peso_de_arremesso %></td>
+                                                                 <% end %>
+                                                                 <% if  !subprod.resistencia.blank? %>
+                                                                    <td><%= subprod.resistencia %></td>
+                                                                 <% end %>
+                                                                 <% if  !subprod.diametro.blank? %>
+                                                                    <td><%= subprod.diametro %></td>
+                                                                 <% end %>
+                                                                
+                                                                    
+                                                                
+                                                                 <% if  !subprod.precio.blank? %>
+                                                                    <td>
+                                                                        <h5>
+                                                                            $ <%=   sprintf("%0.2f", subprod.precio.to_f) %>
+                                                                        </h5>
+                                                                        <span >código: <%= subprod.codigo %> </span>
+                                                                    </td>
+                                                                 <% end %>
+
+                                                                
+                                                                  
+                                                                 
+                                                                </tr>
+                                                                <% end %>
+                                                                
+                                                            </tbody>
+        
+                                                         </table>
+                                            </div>
+                                        </div>
+                                        <div class="shop-control-bar-bottom">
+                                            <!-- <form class="form-electro-wc-ppp">
+                                                <select class="electro-wc-wppp-select c-select" onchange="this.form.submit()" name="ppp"><option selected="selected" value="15">Show 15</option><option value="-1">Show All</option></select>
+                                            </form>
+                                            <p class="woocommerce-result-count">Showing 1–15 of 20 results</p>
+                                            <nav class="woocommerce-pagination">
+                                                <ul class="page-numbers">
+                                                    <li><span class="page-numbers current">1</span></li>
+                                                    <li><a href="#" class="page-numbers">2</a></li>
+                                                    <li><a href="#" class="next page-numbers">→</a></li>
+                                                </ul>
+                                            </nav> -->
+                                        </div>
+            
+                                    </main><!-- #main -->
+                                </div>
+
+                                <% end %>
+                            <!-- /////////////////////// -->
+                            
+
+                            <section class="home-v1-recently-viewed-products-carousel section-products-carousel animate-in-view fadeIn animated" data-animation="fadeIn">
+                                    <header>
+                                        <h2 class="h1">PRODUTOS EM DESTAQUE</h2>
+                                        <div class="owl-nav">
+                                            <a href="#products-carousel-prev" data-target="#recently-added-products-carousel" class="slider-prev"><i class="fa fa-angle-left"></i></a>
+                                            <a href="#products-carousel-next" data-target="#recently-added-products-carousel" class="slider-next"><i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </header>
+                        
+                                    <div id="recently-added-products-carousel">
+                                        <div class="woocommerce columns-6">
+                                            <div class="products owl-carousel recently-added-products products-carousel columns-6">
+                        
+                                                <!-- /////////////////////////////// -->
+                                                <%= render  "layouts/shared_sitio/destacado" %>
+                                                <!-- /////////////////////////////// -->
+                        
+                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+
+
+
+
+                        </main><!-- /.site-main -->
+                    </div><!-- /.content-area -->
+
+            
+
+                </div><!-- .col-full -->
+            </div><!-- #content -->
+
+       
+
+            
+
+            <footer id="colophon" class="site-footer">
+       
+
+            	<!-- <div class="footer-newsletter">
+            		<div class="container">
+            			<div class="row">
+            				<div class="col-xs-12 col-sm-7">
+            					<h5 class="newsletter-title">Sign up to Newsletter</h5>
+            					<span class="newsletter-marketing-text">...and receive <strong>$20 coupon for first shopping</strong></span>
+            				</div>
+            				<div class="col-xs-12 col-sm-5">
+            					<form>
+            						<div class="input-group">
+            							<input type="text" class="form-control" placeholder="Enter your email address">
+            							<span class="input-group-btn">
+            								<button class="btn btn-secondary" type="button">Sign Up</button>
+            							</span>
+            						</div>
+            					</form>
+            				</div>
+            			</div>
+            		</div>
+            	</div> -->
+
+                <%= render  "layouts/shared_sitio/footer" %>
+
+            	<div class="copyright-bar">
+            		<div class="container">
+            			<div class="pull-left flip copyright">&copy; <a href="http://tererecode.com/">Pantanal</a> - All Rights Reserved</div>
+            			
+            		</div><!-- /.container -->
+            	</div><!-- /.copyright-bar -->
+            </footer><!-- #colophon -->
+
+        </div><!-- #page -->
+
+
+       
+            
+
+       
+            
+
+        
+

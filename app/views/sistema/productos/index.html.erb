@@ -1,0 +1,141 @@
+<% if notice %>
+<section id="alert" style="padding: 10px">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-<%= alert %> alert-dismissible">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                      <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                    <%= notice %>
+      </div>
+    </div>
+
+  </div>
+
+
+</section>
+<% end %>
+ 
+<div class="row">
+    <%=form_tag sistema_productos_search_path, method: :get do%>
+        <div class="col-xs-12">
+                <div class="box">
+                  <div class="box-header">
+                    <h3 class="box-title">productos</h3>
+           
+
+                    <div class="box-tools">
+                      <div class="input-group input-group-sm" style="width: 300px; padding-button:5px;">
+                        <%= text_field_tag(:q, params[:q],{class:"form-control pull-right", placeholder: "Search"}) %>
+      
+                        <div class="input-group-btn">
+                            <%= submit_tag("buscar",class:"btn btn-default" ) do%>
+                          <i class="fa fa-search"></i>
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
+
+                    <% end %>
+      
+                    <div class="box-tools">
+                      <div class="input-group input-group-sm" style="width: 150px;">
+                        <!-- <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+      
+                        <div class="input-group-btn">
+                          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                      <tbody><tr>
+                        <th>ID</th>
+                        <th>codigo</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Precio</th>
+                        <th>Precio Oferta</th> 
+                        <th>Destacado</th>
+                        
+                        <th>Categoria</th>
+                        <th>Subcategoria</th>
+                        <th>Marca</th>
+                        <th>Imagenes</th>
+                        <th></th>
+                       
+                      </tr>
+                      <% @productos.each do |producto| %>
+                      <tr>
+                        <td><%= producto.id %></td>
+                        <td><%= producto.code %></td>
+                        <td><%= producto.nombre %></td>
+                        <td><%= producto.descripcion %></td>
+                        <td><%= producto.precio %></td>
+                        <td><%= producto.precio_oferta %></td>
+                        <td>
+                          <% if (producto.destacado == 1)%>
+                          <span class="label label-success">Activo</span>
+                          <% else%>
+                          <span class="label label-danger">Inactivo</span>
+                          <% end%>
+
+                          
+                        </td>
+                        
+                        <td>
+                             <%=  producto.categoria_admin %>
+                             
+                        </td>
+                        <td>
+                            <% if producto.subcat.blank? %>
+                            "SIM SUBCATEGORIA"
+                          <% else %>
+                          
+                            <%= raw producto.subcategory  %>
+                            <% end %>
+                        </td>
+                        <td><% if producto.marca.blank? %>
+                            "SIM MARCA"
+                          <% else %>
+                          <%= producto.marca.nombre %>
+                            <% end %>
+                        </td>
+                        <td>
+                            <% producto.producto_imagens.each do |prod| %>
+                            <%= image_tag prod.image.url(:thumb) %>
+                            <% end %>
+                        </td>
+                        <td>
+                                <%=link_to edit_sistema_producto_path(producto.id), class: "btn btn-warning btn-sm ", 'data-toggle'=> "tooltip",  'data-placement'=>"top",  title:"Edit" do%>
+                                <i class="fa fa-edit"></i>
+                                <%end%>
+                                <%=link_to sistema_producto_path(producto), method: :delete, class: "btn btn-danger btn-sm ", 'data-toggle'=> "tooltip",  'data-placement'=>"top",  title:"Eliminar" do%>
+                                <i class="fa fa-close"></i>
+                                <%end%>
+                                <%=link_to new_sistema_subproducto_path(:producto_id => producto.id), class: "btn btn-primary btn-sm ", 'data-toggle'=> "tooltip",  'data-placement'=>"top",  title:"SubProducto" do%>
+                                <i class="fa fa-archive"></i>
+                                <%end%>
+
+                            
+                                
+                                
+                        </td>
+                       
+                      </tr>
+                      
+                      <% end %>
+                   
+                    
+                    </tbody></table>
+                  </div>
+                  <div class="text-center">
+                      <%= paginate @productos, :theme => 'twitter-bootstrap-3' %>
+        
+                    </div>
+                  <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+              </div>
+</div>

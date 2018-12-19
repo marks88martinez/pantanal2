@@ -1,0 +1,77 @@
+<% if notice %>
+<section id="alert" style="padding: 10px">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-<%= alert or "success" %> alert-dismissible">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                      <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                    <%= notice %>
+      </div>
+    </div>
+
+  </div>
+
+
+</section>
+<% end %>
+ 
+<div class="row">
+        <div class="col-xs-12">
+                <div class="box">
+                  <div class="box-header">
+                    <h3 class="box-title">admins</h3>
+      
+                    <div class="box-tools">
+                      <div class="input-group input-group-sm" style="width: 150px;">
+                        <!-- <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+      
+                        <div class="input-group-btn">
+                          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                      <tbody><tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Imagen</th>
+                        <th>Action</th>
+                       
+                      </tr>
+                      <% @admins.each do |admin| %>
+                      <tr>
+                        <td><%= admin.id %></td>
+                        <td><%= admin.name %></td>
+                        <td><%= admin.email %></td>
+                        
+                        <td>
+                                <%=link_to edit_sistema_admin_path(admin.id), class: "btn btn-warning btn-sm ", 'data-toggle'=> "tooltip",  'data-placement'=>"top",  title:"Edit" do%>
+                                <i class="fa fa-edit"></i>
+                                <%end%>
+                                <% if(current_admin.id != admin.id) %>
+                                  <%=link_to sistema_admin_path(admin), method: :delete, class: "btn btn-danger btn-sm ", 'data-toggle'=> "tooltip",  'data-placement'=>"top",  title:"Eliminar" do%>
+                                  <i class="fa fa-close"></i>
+                                  <%end%>
+                                <%else%>  
+                                  <%=link_to "#", disabled: "disabled" , class: "btn btn-danger btn-sm ", 'data-toggle'=> "tooltip",  'data-placement'=>"top",  title:"Eliminar" do%>
+                                  <i class="fa fa-close"></i>
+                                  <%end%>
+                                <%end%>    
+                                
+                        </td>
+                       
+                      </tr>
+                      
+                      <% end %>
+                   
+                    
+                    </tbody></table>
+                  </div>
+                  <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+              </div>
+</div>

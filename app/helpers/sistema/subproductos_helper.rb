@@ -1,0 +1,2 @@
+module Sistema::SubproductosHelper
+end

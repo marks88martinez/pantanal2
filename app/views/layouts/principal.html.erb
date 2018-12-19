@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-US" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+    
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    
+
+        <title>Pantanal - Pesca</title>
+
+        <link rel="stylesheet" type="text/css" href="/template_sitio/assets/css/bootstrap.min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/template_sitio/assets/css/font-awesome.min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/template_sitio/assets/css/animate.min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/template_sitio/assets/css/font-electro.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/template_sitio/assets/css/owl-carousel.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/template_sitio/assets/css/style.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/template_sitio/assets/css/colors/green.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/template_sitio/assets/css/lity.css" media="all" />
+        
+       
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,700italic,800,800italic,600italic,400italic,300italic' rel='stylesheet' type='text/css'>
+       
+        <link rel="stylesheet" href="/template_sitio/assets/lightbox.css">
+
+        <link rel="shortcut icon" href="/template_sitio/assets/images/fav-icon.png">
+        
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    </head>
+    
+    <body class=" single-product">
+
+            <style>
+                    .preload {
+                        position: fixed;
+                        left: 0px;
+                        top: 0px;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 9999;
+                        background: url(images/loading_spinner.gif) 50% 50% no-repeat rgb(249,249,249);
+                    }
+                    
+                    .gallery {
+                        padding:30px;
+                    }
+                    
+                    
+                    .batas {
+                        margin-bottom:10px;
+                    }
+            </style>
+        
+
+        
+            
+        
+            <div id="page" class="hfeed site">
+               
+
+                <%= render  "layouts/shared_sitio/top-bar" %>
+                <%= render  "layouts/shared_sitio/header" %>
+
+            
+
+                <%= render  "layouts/shared_sitio/nav" %>
+               
+              
+                
+
+                
+                
+                <div class="left-sidebar">
+                        
+                  
+                    
+                    <!-- ///////PRODUCTOS//////// -->
+                    <div class="container">
+
+                        <%= yield %>
+                    </div>
+                   
+                   <!-- ///////PRODUCTOS//////// -->
+                   
+
+                    <%= render  "layouts/shared_sitio/marca" %>
+
+                    <footer id="colophon" class="site-footer">
+                        
+
+                        <!-- <div class="footer-newsletter">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-7">
+                                        <h5 class="newsletter-title">Sign up to Newsletter</h5>
+                                        <span class="newsletter-marketing-text">...and receive <strong>$20 coupon for first shopping</strong></span>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-5">
+                                        <form>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Enter your email address">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-secondary" type="button">Sign Up</button>
+                                                </span>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                      <%= render  "layouts/shared_sitio/footer" %>
+
+                        <div class="copyright-bar">
+                            <div class="container">
+                                <div class="pull-left flip copyright">&copy; <a href="http://tererecode.com/">Pantanal</a> - All Rights Reserved</div>
+
+                            </div><!-- /.container -->
+                        </div><!-- /.copyright-bar -->
+                    </footer><!-- #colophon -->
+                </div>
+            </div><!-- #page -->
+
+           
+        
+
+            <script type="text/javascript" src="/template_sitio/assets/js/jquery.min.js"></script>
+            <script type="text/javascript" src="/template_sitio/assets/js/tether.min.js"></script>
+            <script type="text/javascript" src="/template_sitio/assets/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="/template_sitio/assets/js/bootstrap-hover-dropdown.min.js"></script>
+            <script type="text/javascript" src="/template_sitio/assets/js/owl.carousel.min.js"></script>
+            <script type="text/javascript" src="/template_sitio/assets/js/echo.min.js"></script>
+            <script type="text/javascript" src="/template_sitio/assets/js/wow.min.js"></script>
+            <script type="text/javascript" src="/template_sitio/assets/js/jquery.easing.min.js"></script>
+            <script type="text/javascript" src="/template_sitio/assets/js/jquery.waypoints.min.js"></script>
+            <script type="text/javascript" src="/template_sitio/assets/js/electro.js"></script>
+            <script type="text/javascript" src="/template_sitio/assets/js/lity.js"></script> 
+            <script>
+                $(function() {
+                    $(window).load(function() {
+                        $(".preload").fadeOut("slow");       
+                    });
+                });
+            </script>
+            
+    </body>
+</html>

@@ -1,0 +1,117 @@
+<% if notice %>
+<section id="alert" style="padding: 10px">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-<%= alert %> alert-dismissible">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                      <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                    <%= notice %>
+      </div>
+    </div>
+
+  </div>
+
+
+</section>
+<% end %>
+ 
+<div class="row">
+        <div class="col-xs-12">
+                <div class="box">
+                  <div class="box-header">
+                    <h3 class="box-title">SubProducto - </h3>
+                    
+                    <%=link_to new_sistema_subproducto_path(:producto_id => @id), class: "btn btn-primary btn-sm ", 'data-toggle'=> "tooltip",  'data-placement'=>"top",  title:"SubProducto" do%>
+                    <i class="fa fa-archive"></i>
+                    <%end%>
+                    
+                    <div class="box-tools">
+                      <div class="input-group input-group-sm" style="width: 150px;">
+                        <!-- <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+      
+                        <div class="input-group-btn">
+                          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                      <tbody><tr>
+                        <th>ID</th>
+                        <th></th>
+                        <th>Color</th>
+                        <th>Modelo</th>
+                        <th>Tamanho</th>
+                        <th>Peso</th>
+                        <th>Cantidad</th>
+                        <th>Acabamento</th>
+                        <th>Recolhimento</th>
+                        <th>Rolamento</th>
+                        <th>Freio</th>
+                        <th>Cap. Linha</th>
+                        <th>Potência</th>
+                        <th>tensão</th>
+                        <th>Ação</th>
+                        <th>Peso de Arremesso</th>
+                        <th>resistencia</th>
+                        <th>precio</th>
+                     
+                      
+                        <th>Action</th>
+                       
+                      </tr>
+                      
+                      <% @subprod.each do |s| %>
+                      
+                      <tr>
+                        <td>
+                          <%= s.id %></td>
+                        <td>
+                            <%= image_tag s.image.url(:thumb) %>
+                        </td>
+                        <td class="text-center"><%= s.color %></td>
+                        <td class="text-center"><%= s.modelo %></td>
+                        <td class="text-center"><%= s.tamanho %></td>
+                        <td class="text-center"><%= s.peso %></td>
+                        <td class="text-center"><%= s.cantidad %></td>
+                        <td class="text-center"><%= s.acabamento %></td>
+                        <td class="text-center"><%= s.recolhimento %></td>
+                        <td class="text-center"><%= s.rolamento %></td>
+                        <td class="text-center"><%= s.freio %></td>
+                        <td class="text-center"><%= s.caplinhna %></td>
+                        <td class="text-center"><%= s.potencia %></td>
+                        <td class="text-center"><%= s.tension %></td>
+                        <td class="text-center"><%= s.acao %></td>
+                        <td class="text-center"><%= s.peso_de_arremesso %></td>
+                        <td class="text-center"><%= s.resistencia %></td>
+                        <td class="text-center"><%=   sprintf("%0.2f", s.precio.to_f) %></td>
+                     
+                      
+                        
+                        <td>
+                               
+                                <%=link_to edit_sistema_subproducto_path(s.id), class: "btn btn-warning btn-sm ", 'data-toggle'=> "tooltip",  'data-placement'=>"top",  title:"Edit"  do%>
+                                <i class="fa fa-edit"></i>
+                                <%end%>
+                                <%=link_to sistema_subproducto_path(s, :producto_id=> s.producto_id), method: :delete, class: "btn btn-danger btn-sm ", 'data-toggle'=> "tooltip",  'data-placement'=>"top",  title:"Eliminar" do%>
+                                <i class="fa fa-close"></i>
+                                <%end%>
+                             
+
+                                
+                        </td>
+                       
+                      </tr>
+                      
+                      <% end %>
+                   
+                    
+                    </tbody></table>
+                  </div>
+                  <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+              </div>
+</div>

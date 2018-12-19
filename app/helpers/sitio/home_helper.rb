@@ -1,0 +1,2 @@
+module Sitio::HomeHelper
+end

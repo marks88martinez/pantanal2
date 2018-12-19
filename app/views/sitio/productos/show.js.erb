@@ -1,0 +1,61 @@
+
+
+$('.paginacion').html('<%= j render 'sitio/productos/shared/pagination'%>');
+$('.tab-content').replaceWith('<%= j render 'sitio/productos/shared/product'%>');
+
+
+/*$( "ul.products" ).replaceWith("<ul class='products columns-3'>" 
+                               +"<% @producto_select.each_with_index   do |prod, ind| %>"
+                                +" <li class='product'> "
+                                    + "<div class='product-outer'>"
+                                        +"<div class='product-inner'>"
+                                            +"<span class='loop-product-categories'>"
+                                                +"<a href='/' rel='tag'><%= prod.categoria_admin %></a>"
+                                            +" </span>"
+                                            +' <%=link_to sitio_detalle_producto_path(prod) do %>'
+                                                +"<h3> <%= prod.nombre  %> </h3>"
+                                                +" <div class='product-thumbnail'>"
+                                                +"  <% prod.producto_imagens.first(1).each do |prod| %>"
+                                                +" <img src='<%=prod.image.url(:medium) %>'>"
+                                                +"  <% end %>"
+                                                        
+                                                +"</div>"
+                                            +'<% end %>'
+
+                                            +"<div class='price-add-to-cart'>"
+                                                +"<span class='price'>"
+                                                    +"<span class='electro-price'>"
+                                                        +" <% if prod.precio.blank? %>"
+                                                            +"<span class='amount'> </span>"
+                                                        +" <% elsif !prod.precio.blank? && prod.precio_oferta.blank? %>"
+                                                           +"<ins><span class='amount'>" 
+                                                           +'$ <%= prod.precio %>'
+                                                           +" </span></ins>"
+                                                        +" <% elsif !prod.precio_oferta.blank? %>"
+                                                          +"<ins><span class='amount'>" 
+                                                           +'$ <%= prod.precio_oferta %>'
+                                                           +" </span></ins>"
+                                                        +"<% end %>"
+                                                        +" <% if prod.precio_oferta.blank? %>"
+                                                            +"<span class='amount'> </span>"
+                                                        +"<% else %>"
+                                                            +"<del><span class='amount'>"
+                                                            +'Antes $ <%= prod.precio %>'
+                                                            +"</span></del>"
+                                                        +"<% end %>"
+                                                            
+
+
+                                                    +"</span>"
+                                                +"</span>"
+                                            +"</div>"
+                                        
+                                            
+
+                                        +"</div>"
+                                     +"</div>"
+                                +"  </li>"  
+                                +"<% end %>" 
+                                +"</ul>"
+
+                              );*/

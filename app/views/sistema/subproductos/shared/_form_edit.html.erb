@@ -1,0 +1,220 @@
+<% if @subproducto.errors.any? %>
+    <section  id="alert" style="padding: 10px">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-danger alert-dismissible">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                          <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                          <ul>
+                            <% @subproducto.errors.full_messages.each do |messages| %>
+                            <li><%= messages%></li>
+                            <% end %>
+                          </ul>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+<% end %>
+
+
+<div class="row">
+        <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">producto</h3>
+                  </div>
+                  <!-- /.box-header -->
+                  <!-- form start -->
+                  <%= params[:producto_id] %>
+                 
+                    <%= form_for([:sistema, @subproducto], html: { multipart: true }) do |f| %>
+                   
+                    <div class="box-body">
+                    <div class="row">
+                      <div class="col-md-4">
+
+                          <div class="form-group">
+                              <%= f.label :color %> 
+                              <%= f.text_field :color, class: "form-control", placeholder:"color" %>
+                         </div>
+                        
+                      </div>
+
+                      <div class="col-md-4">
+
+                          <div class="form-group">
+                              <%= f.label :modelo %> 
+                              <%= f.text_field :modelo, class: "form-control", placeholder:"modelo" %>
+                         </div>
+                        
+                      </div>
+                      <div class="col-md-4">
+
+                          <div class="form-group">
+                              <%= f.label :tamanho %> 
+                              <%= f.text_field :tamanho, class: "form-control", placeholder:"tamanho" %>
+                         </div>
+                        
+                      </div>
+                      <div class="col-md-4">
+
+                          <div class="form-group">
+                              <%= f.label :peso %> 
+                              <%= f.text_field :peso, class: "form-control", placeholder:"peso" %>
+                         </div>
+                        
+                      </div>
+                      <div class="col-md-4">
+
+                          <div class="form-group">
+                              <%= f.label :cantidad %> 
+                              <%= f.text_field :cantidad, class: "form-control", placeholder:"cantidad" %>
+                         </div>
+                        
+                      </div>
+                      <div class="col-md-4">
+
+                          <div class="form-group">
+                              <%= f.label :acabamento %> 
+                              <%= f.text_field :acabamento, class: "form-control", placeholder:"acabamento" %>
+                         </div>
+                        
+                      </div>
+                      <div class="col-md-4">
+
+                          <div class="form-group">
+                              <%= f.label :recolhimento %> 
+                              <%= f.text_field :recolhimento, class: "form-control", placeholder:"recolhimento"%>
+                         </div>
+                        
+                      </div>
+                      <div class="col-md-4">
+
+                          <div class="form-group">
+                              <%= f.label :rolamento %> 
+                              <%= f.text_field :rolamento, class: "form-control", placeholder:"rolamento" %>
+                         </div>
+                        
+                      </div>
+                      <div class="col-md-4">
+
+                          <div class="form-group">
+                              <%= f.label :caplinhna %> 
+                              <%= f.text_field :caplinhna, class: "form-control", placeholder:"cap. linha" %>
+                         </div>
+                        
+                      </div>
+                      <div class="col-md-4">
+
+                          <div class="form-group">
+                              <%= f.label :freio %> 
+                              <%= f.text_field :freio, class: "form-control", placeholder:"freio" %>
+                         </div>
+                        
+                      </div>
+                      <div class="col-md-4">
+
+                        <div class="form-group">
+                            <%= f.label :codigo %> 
+                            <%= f.text_field :codigo, class: "form-control", placeholder:"codigo"%>
+                       </div>
+                      
+                    </div>
+                      <div class="col-md-4">
+
+                          <div class="form-group">
+                              <%= f.label :precio %> 
+                              <%= f.text_field :precio, class: "form-control", placeholder:"precio" %>
+                         </div>
+                        
+                      </div>
+
+                      <div class="col-md-4">
+
+                        <div class="form-group">
+                            <%= f.label :potencia %> 
+                            <%= f.text_field :potencia, class: "form-control", placeholder:"potencia"%>
+                       </div>
+                      
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+                            <%= f.label :tension %> 
+                            <%= f.text_field :tension, class: "form-control", placeholder:"tension"%>
+                       </div>
+                      
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+                            <%= f.label :acao %> 
+                            <%= f.text_field :acao, class: "form-control", placeholder:"acao"%>
+                       </div>
+                      
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+                            <%= f.label :peso_de_arremesso %> 
+                            <%= f.text_field :peso_de_arremesso, class: "form-control", placeholder:"peso_de_arremesso"%>
+                       </div>
+                      
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+                            <%= f.label :resistencia %> 
+                            <%= f.text_field :resistencia, class: "form-control", placeholder:"peso_de_arremesso"%>
+                       </div>
+                      
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+                            <%= f.label :diametro %> 
+                            <%= f.text_field :diametro, class: "form-control", placeholder:"Resistência"%>
+                       </div>
+                      
+                    </div>
+
+                      <div class="col-md-6">
+                          <%= f.label :image %><br>
+                          <%= f.file_field :image, class:"btn btn-default"%>
+                        </div>
+ 
+                    </div>
+                   
+           
+                     
+                     
+                    </div>
+                    <div class="box-body">
+                      
+                     
+                    </div>
+                    <!-- /.box-body -->
+      
+                    <div class="box-footer">
+                      <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+
+                   
+                  
+                  <% end %>
+                </div>
+                <!-- /.box -->
+
+               
+      
+      
+              
+      
+        
+               
+               
+              </div>            
+</div>

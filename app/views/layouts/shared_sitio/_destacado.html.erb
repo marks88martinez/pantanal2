@@ -1,0 +1,59 @@
+                                        
+                                        
+                                        <% @prod_destacado.each do |destacado| %>
+                                        
+                                        
+                                            <div class="product">
+                                                    <div class="product-outer">
+                                                        <div class="product-inner">
+                                                            <span class="loop-product-categories"><a rel="tag"><%= destacado.categoria_admin %></a></span>
+                                                           <%= link_to  sitio_detalle_producto_path(destacado ) do %>
+                                                            
+                                                                <h3><%= destacado.nombre %></h3>
+                                                                <div class="product-thumbnail">
+                                                                       
+                                                                        <% destacado.producto_imagens.first(1).each do |prod| %>
+                                                                        <%= image_tag prod.image.url(:medium) %>
+                                                                       
+                                                                        <% end %>
+                                                                    <!-- <img src="/template_sitio/assets/images/blank.gif" data-echo="/template_sitio/assets/images/product-category/2.jpg" class="img-responsive" alt=""> -->
+                                                                </div>
+                                                          
+                                                            <% end %>
+    
+                                                            <div class="price-add-to-cart">
+                                                                <span class="price">
+                                                                    <span class="electro-price">
+                                                                       <% if destacado.precio.blank? %>
+                                                                    
+                                                                       <% elsif !destacado.precio.blank? && destacado.precio_oferta.blank? %>
+                                                                       <ins><span class="amount"> $ <%= destacado.precio %></span></ins>
+                                                                       <% elsif !destacado.precio_oferta.blank? %>
+                                                                       <ins><span class="amount"> $ <%= destacado.precio_oferta %></span></ins>
+                                                                       <% end %>
+
+                                                                       <% if destacado.precio_oferta.blank? %>
+                                                                       <% else %>
+                                                                   
+                                                                       <del><span class="amount"> Antes $ <%= destacado.precio %></span></del>
+                                                                       <% end %>
+                                                                       
+                                                                        <span class="amount"> </span>
+                                                                    </span>
+                                                                </span>
+                                                                <!-- <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a> -->
+                                                            </div>
+                                                            <!-- /.price-add-to-cart -->
+    
+                                                            <div class="hover-area">
+                                                                <!-- <div class="action-buttons">
+    
+                                                                    <a href="#" rel="nofollow" class="add_to_wishlist"> Wishlist</a>
+    
+                                                                    <a href="compare.html" class="add-to-compare-link"> Compare</a>
+                                                                </div> -->
+                                                            </div>
+                                                        </div><!-- /.product-inner -->
+                                                    </div><!-- /.product-outer -->
+                                                </div><!-- /.products -->
+                                                <% end %>

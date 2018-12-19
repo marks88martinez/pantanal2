@@ -1,0 +1,2 @@
+module Sistema::BannerInferiorsHelper
+end

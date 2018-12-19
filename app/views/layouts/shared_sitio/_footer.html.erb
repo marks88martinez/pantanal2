@@ -1,0 +1,90 @@
+<div class="footer-bottom-widgets">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-7 col-md-push-5">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4">
+                                <div class="columns">
+                                        <aside id="nav_menu-2" class="widget clearfix widget_nav_menu">
+                                            <div class="body">
+                                                <h4 class="widget-title">Categorias</h4>
+                                                <div class="menu-footer-menu-1-container">
+                                                    <ul id="menu-footer-menu-1" class="menu">
+                                                        <% @categoria.each do |cat| %>
+                                                        <li class="menu-item">
+                                                            <%= link_to  sitio_producto_path(cat) do %>
+                                                            <%= cat.nombre %>
+                                                            <% end %>
+                                                        </li>
+                                                        
+                                                        <% end %>
+                                                       
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </aside>
+                                    </div><!-- /.columns -->
+                
+                                    
+                
+                                    
+                        </div>
+                        <div class="col-md-6">
+                                <div class="columns2">
+                                    <h4 class="widget-title">Facebook</h4>
+                                        <aside >
+                                                <div id="fb-root"></div>
+                                                <script>(function(d, s, id) {
+                                                var js, fjs = d.getElementsByTagName(s)[0];
+                                                if (d.getElementById(id)) return;
+                                                js = d.createElement(s); js.id = id;
+                                                js.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.1&appId=1381532042145525&autoLogAppEvents=1';
+                                                fjs.parentNode.insertBefore(js, fjs);
+                                                }(document, 'script', 'facebook-jssdk'));</script>
+                                                <div class="fb-page" data-href="https://www.facebook.com/EstrellaInsumosTextiles/" data-tabs="timeline" data-width="350" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/EstrellaInsumosTextiles/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/EstrellaInsumosTextiles/">Estrella - Insumos textiles</a></blockquote></div>
+                                            
+                                        </aside>
+                                    </div><!-- /.columns -->
+                        </div>
+
+                    </div>
+                    
+
+                </div><!-- /.col -->
+
+                <div class="footer-contact col-xs-12 col-sm-12 col-md-5 col-md-pull-7">
+                    <div class="footer-logo">
+                        <br>
+                            <img src="/template_sitio/assets/images/logo.png" alt="">
+                    </div><!-- /.footer-contact -->
+
+                    <div class="footer-call-us">
+                        <div class="media">
+                            <span class="media-left call-us-icon media-middle"><i class="ec ec-support"></i></span>
+                            <div class="media-body">
+                                <span class="call-us-text">Tem dúvidas? Ligue-nos!</span>
+                                <span class="call-us-number">(061) 514242 - (061) 514243</span>
+                            </div>
+                        </div>
+                    </div><!-- /.footer-call-us -->
+
+
+                    <!-- <div class="footer-address">
+                        <strong class="footer-address-title">Contact Info</strong>
+                        <address>17 Princess Road, London, Greater London NW1 8JR, UK</address>
+                    </div> -->
+                    <!-- /.footer-address -->
+
+                    <div class="footer-social-icons">
+                        <!-- <ul class="social-icons list-unstyled">
+                            <li><a class="fa fa-facebook" href="http://themeforest.net/user/shaikrilwan/portfolio"></a></li>
+                            <li><a class="fa fa-twitter" href="http://themeforest.net/user/shaikrilwan/portfolio"></a></li>
+
+                            </ul> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>

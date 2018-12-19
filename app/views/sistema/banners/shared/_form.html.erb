@@ -1,0 +1,72 @@
+<% if @banner.errors.any? %>
+    <section  id="alert" style="padding: 10px">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-danger alert-dismissible">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                          <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                          <ul>
+                            <% @banner.errors.full_messages.each do |messages| %>
+                            <li><%= messages%></li>
+                            <% end %>
+                          </ul>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+<% end %>
+
+
+<div class="row">
+        <div class="col-md-6">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Banner</h3>
+                  </div>
+                  <!-- /.box-header -->
+                  <!-- form start -->
+                 
+                    <%= form_for([:sistema, @banner], html: { multipart: true }) do |f| %>
+                    <div class="box-body">
+                      <div class="form-group">
+                           <%= f.label :nombre %> 
+                           <%= f.text_field :nombre, class: "form-control", placeholder:"nombre" %>
+                      </div>
+                     
+                    </div>
+                    <div class="box-body">
+                      <div class="form-group">
+                           <%= f.label :url %> 
+                           <%= f.text_field :url, class: "form-control", placeholder:"url" %>
+                      </div>
+                     
+                    </div>
+                    <div class="box-body">
+                      <div class="form-group">
+                           <%= f.label :imagen %> 
+                           
+                           <%= f.file_field :image %>
+                        
+                      </div>
+                     
+                    </div>
+                    <!-- /.box-body -->
+      
+                    <div class="box-footer">
+                      <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                  
+                  <% end %>
+                </div>
+                <!-- /.box -->
+      
+              
+      
+        
+               
+               
+             
+</div>
